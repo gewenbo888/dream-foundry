@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Foundry · 梦境熔炉 — Subconscious worlds, generated</title>
+
+<meta name="description" content="Dream Foundry generates oneiric worlds from subconscious inputs — fears, memories, desires, recent emotions — and reads recurring archetypes through a symbolic lexicon.">
+<meta name="keywords" content="dreams, subconscious, archetypes, oneiric, AI dream interpretation, psychology, symbolic lexicon, 梦, 潜意识, 原型">
+<meta name="author" content="Gewenbo">
+<link rel="canonical" href="https://dream-foundry.psyverse.fun/">
+<link rel="alternate" hreflang="en" href="https://dream-foundry.psyverse.fun/">
+<link rel="alternate" hreflang="zh-CN" href="https://dream-foundry.psyverse.fun/">
+<link rel="alternate" hreflang="x-default" href="https://dream-foundry.psyverse.fun/">
+<meta property="og:title" content="Dream Foundry — Subconscious worlds, generated">
+<meta property="og:description" content="Eight archetypes, twelve symbols, one foundry that turns inputs into oneiric narratives.">
+<meta property="og:url" content="https://dream-foundry.psyverse.fun/">
+<meta property="og:site_name" content="Psyverse">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dream Foundry">
+<meta name="twitter:description" content="Subconscious worlds, generated.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#8a6dff">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><radialGradient id='g' cx='35%25' cy='30%25'><stop offset='0%25' stop-color='%23ff8fc7'/><stop offset='50%25' stop-color='%238a6dff'/><stop offset='100%25' stop-color='%233d2d8c'/></radialGradient></defs><circle cx='16' cy='16' r='14' fill='url(%23g)'/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+<script src="https://analytics-dashboard-two-blue.vercel.app/tracker.js" defer></script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">
+        <span lang="en">Dream Foundry</span>
+        <span lang="zh">梦境熔炉</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="#archetypes"><span lang="en">Archetypes</span><span lang="zh">原型</span></a>
+      <a href="#foundry"><span lang="en">Foundry</span><span lang="zh">熔炉</span></a>
+      <a href="#lexicon"><span lang="en">Lexicon</span><span lang="zh">辞典</span></a>
+      <a href="#interpret"><span lang="en">Interpret</span><span lang="zh">释梦</span></a>
+    </div>
+    <div class="nav-ctrl">
+      <button class="btn" id="lang-btn">EN</button>
+      <button class="btn" id="theme-btn">◐</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span lang="en">Twilight · Eight Archetypes · One Foundry</span><span lang="zh">微明 · 八种原型 · 一座熔炉</span></div>
+      <h1 class="display">
+        <span lang="en">The same dream, <em>recurring</em>, is the body filing a complaint you keep refusing to read.</span>
+        <span lang="zh">同一个梦，<em>反复出现</em>，是身体正在归档一份你一再拒绝阅读的投诉。</span>
+      </h1>
+      <p class="lede">
+        <span lang="en">Dream Foundry takes four subconscious inputs — your fears, recent memories, present desires, the dominant emotional weather of the last week — and runs them through eight recurring archetypes and a twelve-entry symbolic lexicon to forge a dream-narrative. Not a prediction. A mirror written in the language the body uses when no one is listening.</span>
+        <span lang="zh">梦境熔炉接受四种潜意识输入——你的恐惧、近期记忆、当下欲望、过去一周占主导的情绪气候——并使其通过八种反复出现的原型与十二项符号辞典，锻造出一段梦的叙事。不是预测，是一面用身体在无人聆听时所用的语言写就的镜子。</span>
+      </p>
+      <div class="tags">
+        <span class="tag">subconscious inputs</span>
+        <span class="tag">archetype generator</span>
+        <span class="tag">symbolic lexicon</span>
+        <span class="tag">EN · 中文</span>
+      </div>
+    </div>
+    <div class="dream-viz" id="dream-viz"></div>
+  </div>
+</header>
+
+<section id="archetypes">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">D1 · Eight Recurring Archetypes</div>
+      <h2><span lang="en">Eight images. <em>Most adults dream most of them.</em></span><span lang="zh">八幅图像。<em>大多数成年人都梦过其中大部分。</em></span></h2>
+      <p class="sec-lede"><span lang="en">Cross-cultural dream studies converge on a small set of recurring images. They aren't prophecies; they're the body's compression algorithm for emotional residue. Each one carries one or two dominant readings — read these as starting points, not as keys.</span><span lang="zh">跨文化的梦研究收敛于一小组反复出现的图像。它们不是预言，而是身体对情感残留的压缩算法。每一种都携带一两种主导读法——把它们当起点读，不是钥匙。</span></p>
+    </div>
+    <div class="grid c4" id="archetypes-grid"></div>
+  </div>
+</section>
+
+<section id="foundry">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">D2 · The Foundry</div>
+      <h2><span lang="en">Set the inputs. Pick the archetypes. Forge a dream.</span><span lang="zh">设置输入。挑选原型。锻造一个梦。</span></h2>
+      <p class="sec-lede"><span lang="en">Four subconscious dimensions plus three archetypes you click on. The output is a short oneiric passage, not a forecast and not a Freudian decode. Honesty: this is a generator, not an oracle.</span><span lang="zh">四种潜意识维度，加你点选的三种原型。输出是一段简短的梦境段落，不是预报，也不是弗洛伊德式破译。坦诚：这是一台生成器，不是一座神谕。</span></p>
+    </div>
+    <div class="dream-lab">
+      <div class="controls">
+        <div>
+          <label><span><span lang="en">Fear weight</span><span lang="zh">恐惧权重</span></span> <span class="mono" id="v-fear">5</span></label>
+          <input type="range" min="0" max="10" value="5" id="s-fear">
+        </div>
+        <div>
+          <label><span><span lang="en">Memory recency</span><span lang="zh">记忆新鲜度</span></span> <span class="mono" id="v-mem">5</span></label>
+          <input type="range" min="0" max="10" value="5" id="s-mem">
+        </div>
+        <div>
+          <label><span><span lang="en">Desire intensity</span><span lang="zh">欲望强度</span></span> <span class="mono" id="v-des">5</span></label>
+          <input type="range" min="0" max="10" value="5" id="s-des">
+        </div>
+        <div>
+          <label><span><span lang="en">Emotional weather</span><span lang="zh">情绪气候</span></span></label>
+          <select id="s-mood">
+            <option value="grief">grief / 哀伤</option>
+            <option value="longing" selected>longing / 思慕</option>
+            <option value="dread">dread / 惧</option>
+            <option value="elation">elation / 欢腾</option>
+            <option value="numb">numb / 麻木</option>
+            <option value="rage">rage / 怒</option>
+          </select>
+        </div>
+      </div>
+      <label style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase;"><span lang="en">Pick three archetypes</span><span lang="zh">挑三个原型</span></label>
+      <div class="archetype-picker" id="arch-picker"></div>
+      <button class="go" id="forge-go"><span lang="en">Forge</span><span lang="zh">锻造</span></button>
+      <div class="dream-out" id="dream-out"></div>
+    </div>
+  </div>
+</section>
+
+<section id="lexicon">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">D3 · Symbolic Lexicon</div>
+      <h2><span lang="en">Twelve common symbols. <em>One starting reading each. Not the only one.</em></span><span lang="zh">十二种常见符号。<em>每一种一个起始读法。不是唯一读法。</em></span></h2>
+      <p class="sec-lede"><span lang="en">A symbol's meaning is bounded by the dreamer's lived associations, not by a universal table. The lexicon below gives the most-statistically-common reading and the cost line of mistaking one for the other.</span><span lang="zh">符号的意义被梦者活过的联想所限定，而非一张普世的表。下方的辞典给出最常见的统计读法，以及错读所付的代价。</span></p>
+    </div>
+    <div class="lex-table" id="lex-table"></div>
+  </div>
+</section>
+
+<section id="interpret">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">D4 · Oneiric Engine</div>
+      <h2><span lang="en">Five canned readings plus a free-text fallback.</span><span lang="zh">五个预设读法 + 自由文本回退。</span></h2>
+      <p class="sec-lede"><span lang="en">Each probe reads one well-defined dream pattern. The free-text box runs a heuristic over your input, not a frontier model.</span><span lang="zh">每个探针读取一种定义明确的梦的模式。自由文本框对输入运行启发式，不是前沿模型。</span></p>
+    </div>
+    <div class="mirror-wrap">
+      <div class="prompt-grid" id="prompt-grid"></div>
+      <div class="mirror-input">
+        <textarea id="mirror-input" placeholder="e.g. 'I keep dreaming I'm back in my old high school but I'm the age I am now and I can't find the exit.'"></textarea>
+        <button id="mirror-go"><span lang="en">Read</span><span lang="zh">读取</span></button>
+      </div>
+      <div class="mirror-out" id="mirror-out"></div>
+    </div>
+  </div>
+</section>
+
+<section id="rails">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">D5 · Guardrails</div>
+      <h2><span lang="en">What this foundry refuses to pretend.</span><span lang="zh">本熔炉拒绝伪装的事。</span></h2>
+    </div>
+    <div class="rails">
+      <h3><span lang="en">Five things Dream Foundry will not do.</span><span lang="zh">梦境熔炉不会做的五件事。</span></h3>
+      <ul>
+        <li><span lang="en"><strong>No prophecies.</strong> Dreams are residue, not preview. The foundry refuses prompts of the form "what does my dream predict will happen?"</span><span lang="zh"><strong>不做预言。</strong>梦是残留，不是预告。熔炉拒绝"我的梦预测将发生什么？"形式的提问。</span></li>
+        <li><span lang="en"><strong>No deterministic dream-key tables.</strong> "Dream of teeth = anxiety" tables are folk taxonomies. The body's symbolic language is bounded by the dreamer's lived associations, not by a universal lookup.</span><span lang="zh"><strong>不做决定性的"梦的钥匙"表。</strong>"梦见牙齿 = 焦虑"这类表是民间分类学。身体的符号语言被梦者的活体联想所限定，不是一个普世查表。</span></li>
+        <li><span lang="en"><strong>No Freudian determinism.</strong> Sometimes a tunnel is a tunnel. The foundry refuses to translate every image into a sexual or repression-of-childhood register; the literature stopped doing that decades ago.</span><span lang="zh"><strong>不做弗洛伊德决定论。</strong>有时隧道就是隧道。熔炉拒绝把每个图像都翻译成性或童年压抑的语域；文献几十年前就停止这么做了。</span></li>
+        <li><span lang="en"><strong>No clinical claim.</strong> Recurring nightmares, sleep paralysis, and persistent insomnia are clinical territory. This site is a generator, not a doctor; if your dreams are costing you sleep, see a real one.</span><span lang="zh"><strong>不做临床主张。</strong>反复噩梦、睡眠瘫痪、持续失眠是临床领域。本站是生成器，不是医生；如果梦正在让你失眠，去看一位真正的医生。</span></li>
+        <li><span lang="en"><strong>No infinite-AI-generation slop.</strong> Five canned readings plus one heuristic fallback is better discipline than infinite plausible-sounding LLM text. The body's most private language is not a place for endless plausible filler.</span><span lang="zh"><strong>不做无限 AI 生成的污水。</strong>五个预设读法加一个启发式回退，比无穷个貌似合理的 LLM 文本是更好的纪律。身体最私密的语言不是任由无穷"看起来合理的填充物"出现的地方。</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <span lang="en">Dream Foundry · part of the </span>
+    <span lang="zh">梦境熔炉 · </span>
+    <a href="https://psyverse.fun">Psyverse</a>
+    <span lang="en"> portfolio by </span>
+    <span lang="zh"> 投资组合的一部分 · 作者：</span>
+    <a href="https://psyverse.fun">Gewenbo</a>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
